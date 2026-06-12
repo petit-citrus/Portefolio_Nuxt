@@ -86,12 +86,6 @@ const acNiveau2 = [
     ]
   }
 ]
-
-// Fonction pour jouer l'audio
-const playAudio = (url: string) => {
-  const audio = new Audio(url);
-  audio.play();
-}
 </script>
 
 <template>
@@ -133,14 +127,12 @@ const playAudio = (url: string) => {
               <div v-for="(trace, index) in ac.traces" :key="index" class="p-4 rounded bg-black/20 border border-white/5 flex flex-col gap-3">
                 <p class="text-sm text-texte/90">{{ trace.texte }}</p>
                 
-                <div v-if="trace.audio" class="mt-2">
-                  <UButton 
-                    icon="i-heroicons-play-circle" 
-                    color="primary" 
-                    variant="soft" 
-                    label="Écouter l'interview" 
-                    @click="playAudio(trace.audio)"
-                  />
+                <div v-if="trace.audio" class="mt-2 w-full">
+                  <p class="text-xs text-primaire mb-2 font-medium">Écouter l'interview :</p>
+                  <audio controls class="w-full">
+                    <source :src="trace.audio" type="audio/mpeg">
+                    Votre navigateur ne supporte pas l'élément audio.
+                  </audio>
                 </div>
 
                 <img v-if="trace.image" :src="trace.image" :alt="trace.alt" class="rounded-md border border-white/10 max-w-full h-auto shadow-sm" />
@@ -199,13 +191,13 @@ const playAudio = (url: string) => {
         <div>
           <h3 class="font-bold text-primaire">1. Ressources mobilisées</h3>
           <p>
-            Pour mieux préparer et faire plus "professionnel", nous avons utilisé divers outils comme des planificateurs, des To-Do Lists et l'apprentissage de langages comme LaTeX pour mieux rédiger des documents. En ce qui concerne directement le code, Git a été nécessaire pour mieux apprendre à gérer un code entre plusieurs développeurs. 
+            Pour mieux préparer et faire plus professionnel, nous avons utilisé divers outils comme des planificateurs, des To-Do Lists et l'apprentissage de langages comme LaTeX pour mieux rédiger des documents. En ce qui concerne directement le code, Git a été nécessaire pour mieux apprendre à gérer un code entre plusieurs développeurs. 
           </p>
         </div>
         <div>
           <h3 class="font-bold text-primaire">2. Implication dans la conduite</h3>
           <p>
-            J'ai souvent endossé le rôle de "chef de projet" pour définir le chemin que je voyais le plus optimisé pour les projets. Un cas concret a été le rendu de documentation de l'API Toutatix pour le TP 1 où j'ai distribué les tâches à l'ensemble du groupe. J'ai aussi appris à gérer seul la charge de travail de deux personnes après l'abandon d'un camarade en cours de projet pendant la SAE 4.01.
+            J'ai souvent endossé le rôle de chef de projet pour définir le chemin que je voyais le plus optimisé pour les projets. Un cas concret a été le rendu de documentation de l'API Toutatix pour le TP 1 où j'ai distribué les tâches à l'ensemble du groupe. J'ai aussi appris à gérer seul la charge de travail de deux personnes après l'abandon d'un camarade en cours de projet pendant la SAE 4.01.
           </p>
         </div>
         <div>
