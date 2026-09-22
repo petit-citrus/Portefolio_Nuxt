@@ -22,13 +22,8 @@ useSeoMeta({
 
 <template>
   <UApp class="bg-fond min-h-screen text-texte">
-    
     <UHeader class="bg-fond text-texte border-b border-primaire/20">
       <template #left>
-        <NuxtLink to="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <span class="font-bold text-white hidden sm:block">Simon.</span>
-        </NuxtLink>
-
         <TemplateMenu />
       </template>
 
@@ -41,7 +36,7 @@ useSeoMeta({
           class="text-texte hover:text-secondaire hover:bg-secondaire/10 transition-colors"
           variant="ghost"
         />
-        
+
         <UButton
           to="https://www.linkedin.com/in/simon-saulnier-9948aa32b/"
           target="_blank"
