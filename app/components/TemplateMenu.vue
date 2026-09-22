@@ -28,16 +28,17 @@ const menuItems = [
     :modal="false"
     :items="menuItems"
     :content="{ align: 'start' }"
-    :ui="{ content: 'min-w-fit' }"
-    size="xs"
+    :ui="{ content: 'min-w-48' }"
+    size="md"
   >
     <UButton
-      label="Navigation"
-      variant="subtle"
+      label="NAVIGATION"
+      variant="soft"
+      color="primary"
       trailing-icon="i-lucide-chevron-down"
-      size="xs"
-      class="-mb-[6px] font-semibold rounded-full truncate"
-      :class="[open && 'bg-primaire/15']"
+      size="md"
+      class="font-bold rounded-full px-5 py-2 transition-all"
+      :class="[open && 'ring-2 ring-primaire bg-primaire/20']"
       :ui="{
         trailingIcon: ['transition-transform duration-200', open ? 'rotate-180' : undefined].filter(Boolean).join(' ')
       }"

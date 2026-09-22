@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
-    '@nuxt/content',
     '@nuxt/image'
   ],
 
@@ -14,7 +13,10 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
+    '/cv': { prerender: true },
+    '/contact': { prerender: true },
+    '/competence/**': { prerender: true }
   },
 
   compatibilityDate: '2025-01-15',
