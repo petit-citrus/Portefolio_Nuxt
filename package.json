@@ -16,6 +16,7 @@
     "@nuxt/image": "^2.1.0",
     "@nuxt/ui": "^4.7.1",
     "nuxt": "^4.4.5",
+    "resend": "^6.30.0",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
