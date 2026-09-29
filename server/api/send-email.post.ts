@@ -9,7 +9,7 @@ interface ContactBody {
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig(event)
+  const config = useRuntimeConfig()
   const body = await readBody<ContactBody>(event)
 
   const name = body.name?.trim()
