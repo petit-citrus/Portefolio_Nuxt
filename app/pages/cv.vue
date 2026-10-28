@@ -60,6 +60,14 @@ const {
         >
           {{ contact.localisation }}
         </UBadge>
+        <UButton
+          to="/documents/cv-simon-saulnier.pdf"
+          download
+          color="neutral"
+          variant="solid"
+          icon="i-heroicons-arrow-down-tray"
+          label="Télécharger mon CV"
+        />
       </div>
     </header>
 
